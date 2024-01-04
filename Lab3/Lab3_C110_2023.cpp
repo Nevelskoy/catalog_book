@@ -144,6 +144,7 @@ void main()
 
 	} while (cmd);
 
+	clearCARD(newCatalog);
 
 
 

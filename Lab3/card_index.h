@@ -7,4 +7,7 @@ struct CARD_INDEX {
     size_t capacity;
 };
 
-void printCatalog(const struct CARD_INDEX* catalog);
+void printCatalog(const CARD_INDEX* catalog);
+
+
+void clearCARD(CARD_INDEX* catalog);

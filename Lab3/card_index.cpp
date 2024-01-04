@@ -55,3 +55,14 @@ void printCatalog(const CARD_INDEX* catalog) {
     printf("\nPress any key to return to the menu\n");
     _getch();
 }
+
+
+void clearCARD(CARD_INDEX* catalog) {
+
+    for (size_t i = 0; i < catalog->count; i++)
+    {
+        delete catalog->pB[i];
+    }
+    delete[] catalog->pB;
+    catalog->pB = nullptr;
+}
