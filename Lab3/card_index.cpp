@@ -16,7 +16,7 @@ int menu() {
 	return cmd;
 }
 
-// Насколько корректно не указывать struct в определении?
+
 void printCatalog(const CARD_INDEX* catalog) {
     if (catalog->count != 0) {
         for (size_t i = 0; i < catalog->count; i++) {
@@ -51,7 +51,6 @@ void printCatalog(const CARD_INDEX* catalog) {
     else {
         printf("The catalog is empty!");
     }
-
     printf("\nPress any key to return to the menu\n");
     _getch();
 }

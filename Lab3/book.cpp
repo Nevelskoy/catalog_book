@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <conio.h>
+#include <cctype>
 #include "book.h"
 #include "card_index.h"
 
@@ -15,9 +16,12 @@ void addBook(CARD_INDEX* catalog) {
 
     do {
         printf("Enter the year of publication: ");
-        scanf_s("%d", &newBook->year);
+        newBook->year = 0;
+        scanf_s(
+            "%d", &newBook->year);
         if (newBook->year < 1500) {
             printf("Invalid year. Let's try again\n");
+            scanf_s("%*s"); //  clear the input buffer
         }
     } while (newBook->year < 1500);
 
@@ -26,6 +30,7 @@ void addBook(CARD_INDEX* catalog) {
         scanf_s("%lf", &newBook->price);
         if (newBook->price < 1) {
             printf("Invalid price. Let's try again\n");
+            scanf_s("%*s"); //  clear the input buffer
         }
     } while (newBook->price < 1);
 
