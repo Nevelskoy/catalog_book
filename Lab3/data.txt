@@ -1,0 +1,4 @@
+Number of books: 2
+
+Author:                            aa Title:                            aa Year: 2222 Price: 2.00 Category: 1;
+Author:                            bb Title:                            bb Year: 4444 Price: 4.00 Category: 4;

@@ -136,6 +136,12 @@ void main()
 			addBook(newCatalog);
 			break;
 		case 3:
+			exportCatalog(newCatalog);
+			break;
+		case 4:
+			importCatalog(newCatalog);
+			break;
+		case 5:
 			deleteBook(newCatalog);
 			break;
 		default:

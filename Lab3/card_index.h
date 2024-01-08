@@ -9,5 +9,8 @@ struct CARD_INDEX {
 
 void printCatalog(const CARD_INDEX* catalog);
 
+void exportCatalog(const CARD_INDEX* catalog);
+
+void importCatalog(CARD_INDEX* catalog);
 
 void clearCARD(CARD_INDEX* catalog);
