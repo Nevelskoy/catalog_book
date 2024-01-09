@@ -66,7 +66,7 @@ void exportCatalog(const CARD_INDEX* catalog) {
         fprintf(file, "Number of books: %d\n", catalog->count);
         for (size_t i = 0; i < catalog->count; i++)
         {
-            fprintf(file, "\nAuthor: %29s Title: %29s Year: %4d Price: %.2f Category: %d;", catalog->pB[i]->author, catalog->pB[i]->title, catalog->pB[i]->year, catalog->pB[i]->price, catalog->pB[i]->category);
+            fprintf(file, "\nAuthor: %15s Title: %15s Year: %4d Price: %.2f Category: %d", catalog->pB[i]->author, catalog->pB[i]->title, catalog->pB[i]->year, catalog->pB[i]->price, catalog->pB[i]->category);
         }
         fclose(file);
         printf("Export finished");
@@ -88,17 +88,22 @@ void importCatalog(CARD_INDEX* catalog) {
         catalog->pB = new BOOK * [catalog->count];
         catalog->capacity = catalog->count;
         for (size_t i = 0; i < catalog->count; i++) {
+            int tmp = -1;
             catalog->pB[i] = new BOOK;
-            fscanf_s(file, "\nAuthor: %29s", catalog->pB[i]->author, _countof(catalog->pB[i]->author));
-            fscanf_s(file, " Title: %29s", catalog->pB[i]->title, _countof(catalog->pB[i]->title));
+            fscanf_s(file, " Author: %15s", catalog->pB[i]->author, _countof(catalog->pB[i]->author));
+            fscanf_s(file, " Title: %15s", catalog->pB[i]->title, _countof(catalog->pB[i]->title));
             fscanf_s(file, " Year: %4d", &catalog->pB[i]->year);
             fscanf_s(file, " Price: %lf", &catalog->pB[i]->price);
-            int tmp = 3;
             fscanf_s(file, " Category: %d", &tmp);
             catalog->pB[i]->category = static_cast<CategoryBook>(tmp);
         }
         fclose(file);
-        printf("File prochitan");
+        printf("The data has been downloaded!");
+        printf("\nPress any key to return to the menu\n");
+        _getch();
+    }
+    else {
+        std::cout << "Error! The data is unavailable!" << std::endl;
     }
 }
 
